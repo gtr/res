@@ -1,0 +1,294 @@
+
+%% AUTHOR:  GERARDO TORRES
+%% URL:     HTTPS://GITHUB.COM/GTR/RES
+%%          HTTPS://GERARDO.TO/
+
+\documentclass[letterpaper,9pt]{article}
+
+%% PACKAGES
+
+\nofiles
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[empty]{fullpage}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{anyfontsize}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{array}
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{enumitem}
+\usepackage[fontsize=9.3]{scrextend}
+
+
+% DONT %% 
+\renewcommand{\familydefault}{\sfdefault}
+% \renewcommand{\rmdefault}{ptm}
+% \renewcommand{\familydefault}{lmodern}
+
+
+%% MARGINS %%
+
+\usepackage{graphicx}
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+\geometry{
+    letterpaper,
+    total={198mm,310mm},
+    left=12mm,
+    top=11mm,
+}
+
+\raggedright
+% \setcounter{secnumdepth}{0}
+
+%% CUSTOM COMMANDS %%
+
+\global\mdfdefinestyle{burgundyline}{
+    linecolor=blue!55!black,
+    linewidth=1pt,
+    leftmargin=0.7cm,
+    rightmargin=1cm
+}
+
+% Color on lines and name
+\definecolor{bluee}{rgb}{0,0,0.4}
+\definecolor{light-grey}{rgb}{0.4,0.4,0.4}
+
+% Command for displaying organizations (schools & employers)
+\newcommand{\organization}[4]{
+    \vspace{1.5pt}
+
+    \textbf{#1} | \emph{#3} \hfill{#4 | #2}
+
+    \vspace{14pt}
+}
+
+% Command for displaying projects
+\newcommand{\project}[2]{
+    \textbf{#1} -- \emph{#2} \\
+}
+
+\newcommand{\pro}[3]{
+    \item \href{#2}{\textbf{#1}} -- {#3}
+    % \vspace{1pt}
+}
+
+% Command for displaying skills table
+\newcommand{\skills}[2]{
+    \vspace{-2pt} 
+    \bulletsBeginn
+        \item Programming: \hspace{14pt} #1
+        \item Technologies: \hspace{17pt} #2
+    \bulletsEndd
+    % \end{tabular}
+    \vspace{4pt}
+}
+
+% MYSSECTION
+
+
+\newmdenv[
+    topline=false,
+    bottomline=false,
+    rightline=false,
+    skipabove=\topsep,
+    skipbelow=\topsep
+    ]{siderules}
+
+
+% Command for the beginning of bullets in work exp and projects
+\newcommand{\bulletsBegin}{
+    \vspace{-8pt}
+    \begin{minipage}{16.5cm} 
+    \begin{itemize}[leftmargin=0.6cm]
+    \setlength\itemsep{-0.05em}
+}
+
+% Command for the end of bullets in work exp and projects
+\newcommand{\bulletsEnd}{
+    \end{itemize}\vspace{0pt}
+    \end{minipage}
+}
+
+% Command for the beginning of bullets in work exp and projects
+\newcommand{\bulletsBeginn}{
+    \vspace{1pt}
+    \begin{minipage}{17.5cm} 
+    \begin{itemize}[leftmargin=0.5cm]
+    \setlength\itemsep{-0.05em}
+}
+
+% Command for the end of bullets in work exp and projects
+\newcommand{\bulletsEndd}{
+    \end{itemize}\vspace{0pt}
+    \end{minipage}
+}
+
+% Command for personal website
+\newcommand{\mySite}[1]{
+    \href{https://example.com}{\faLink \ #1}
+    \ |
+}
+
+% Command for email
+\newcommand{\myEmail}[1]{
+    \href{mailto:example@email.edu}{\faEnvelope \ #1}
+    \ |
+}
+
+% Command for github profile
+\newcommand{\myGitHub}[1]{
+    \href{https://github.com/example/}{\faGithub \ #1}
+}
+
+% Command for displaying name and Contact info
+\newcommand{\myName}[4]{
+    \begin{center}
+        {\huge{\textbf{{#1}}}} \\
+        \vspace{7pt}
+        \myEmail{#4}
+        \mySite{#2}
+        \myGitHub{#3}
+    \end{center}
+    \vspace{-10pt}
+}
+
+\newcommand{\resumeSection}[1]{
+    \vspace{8pt}
+    \hspace{15pt} \textbf{\color{bluee}#1}
+    \vspace{2pt}
+}
+
+% Title formatting for each section on resume
+\titleformat{\section}{
+	\vspace{-16pt}\textbf\color{bluee}\raggedright\large
+	}{}{0em}{}[\vspace{-6pt}]
+
+%% DOCUMENT 
+
+\setlength{\columnseprule}{1pt}
+\begin{document}
+
+    %% HEADING --------------------
+    \myName{First Last}{https://website.com/}{https://github.com/example/}{example@email.com}
+    
+    \resumeSection{EDUCATION}
+    %% EDUCATION --------------------
+    \begin{siderules}[style=burgundyline]
+        \vspace{-6pt}
+        
+        \organization{Example State University}{Sep 20XX - Dec 20XX}
+        {B.S. in Computer Science }{City, ST}
+        
+        \bulletsBegin
+        \item College of Applied Science and Engineering, GPA: 3.XX/4.00
+        \item Relevant Coursework: minima veniam, quis nostrum, exercitationem, ullam, corporis suscipit, laboriosam, nisi ut aliquid, ex ea commodi, consequatur, accusamus et, iusto odio, dignissimos ducimus
+        \bulletsEnd
+        \vspace{-12pt}
+    \end{siderules}
+    
+    %% WORK EXPERIENCE --------------------
+    
+    \resumeSection{EXPERIENCE}
+    \begin{siderules}[style=burgundyline]
+            \vspace{-6pt}
+
+
+            \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+            {Position}{San Francisco, CA}
+            \bulletsBegin
+                \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+                \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+            \bulletsEnd
+    
+            \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+            {Position}{San Francisco, CA}
+            \bulletsBegin
+                \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+                \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+            \bulletsEnd
+    
+            \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+            {Position}{San Francisco, CA}
+            \bulletsBegin
+                \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+                \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+            \bulletsEnd
+    
+            \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+            {Position}{San Francisco, CA}
+            \bulletsBegin
+                \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+                \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+            \bulletsEnd
+
+            \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+            {Position}{San Francisco, CA}
+            \bulletsBegin
+                \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+                \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+            \bulletsEnd
+        
+            \vspace{-12pt}  
+        \end{siderules}
+
+
+    %% PROJECTS --------------------
+    
+
+    
+    \resumeSection{PROJECTS}
+    
+    \begin{siderules}[style=burgundyline]
+        \vspace{-6pt}
+        
+            \bulletsBeginn
+                \item Cool Project:       \hspace{20pt} Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
+                \item Cool Project:       \hspace{20pt} Morbi fermentum mi eros, in hendrerit odio egestas in sodales ante metus
+                \item Cool Project:       \hspace{20pt} In quis ullamcorper tellus, ornare feugiat leo ac aliquet velit lacinia sollicitudin ipsam interdum
+                \item Cool Project:       \hspace{20pt} Pellentesque imperdiet lectus sed urna sollicitudin, sit amet consequat massa finibus
+            \bulletsEndd
+
+        \vspace{-12pt}
+    \end{siderules}
+
+    %% SKILLS --------------------
+    \resumeSection{SKILLS}
+    \begin{siderules}[style=burgundyline]
+        \vspace{-5pt}
+        \skills
+            {quia dolor sit amet, consectetur, adipisci velit}
+            {quia dolor sit amet, consectetur, adipisci velit}
+        \vspace{-19pt}
+    \end{siderules}
+
+    %% AWARDS --------------------
+    
+    \resumeSection{AWARDS}
+    \begin{siderules}[style=burgundyline]
+        \vspace{-5pt}
+        \bulletsBeginn
+            \item Turing Award \hfill{20XX}  
+            \item Nobel Prize \hfill{20XX}    
+        \bulletsEndd
+        \vspace{-10pt}  
+    \end{siderules}
+
+    
+    \vspace{10pt}
+    \hspace{14pt}
+    \color{light-grey}
+    R\'esum\'e \hspace{398pt}{Updated: Nov 2019}
+
+\end{document}
+

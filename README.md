@@ -1,5 +1,16 @@
 # res
-software engineer boilerplate resume
+Software engineer boilerplate resumes!
 
-## Example:
-![hi](template.png)
+## Examples:
+
+The first one:
+
+![hi](./1.one/template.png)
+
+
+The second one:
+
+![hi](./2.two/two.png)
+
+
+Enjoy :)

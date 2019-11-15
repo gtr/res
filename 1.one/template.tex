@@ -1,0 +1,238 @@
+
+%% AUTHOR:  GERARDO TORRES
+%% URl:     HTTPS://GITHUB.COM/GTR/RES
+%%          HTTPS://GERARDO.TO/
+
+\documentclass[letterpaper,10pt]{article}
+
+%% PACKAGES
+
+\nofiles
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[empty]{fullpage}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{enumitem}
+
+%% MARGINS %%
+
+\usepackage{graphicx}
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+\geometry{
+    letterpaper,
+    total={182mm,310mm},
+    left=15mm,
+    top=11mm,
+}
+
+\raggedright
+% \setcounter{secnumdepth}{0}
+
+%% CUSTOM COMMANDS %%
+
+% Color on lines and name
+\definecolor{burgundy}{rgb}{0,0,0}
+\definecolor{light-grey}{rgb}{0.4,0.4,0.4}
+
+% Command for displaying organizations (schools & employers)
+\newcommand{\organization}[4]{
+    \vspace{1.5pt}
+    \textbf{#1} \hfill{\emph{#2}} \\
+    \emph{#3} \hfill{#4} \\
+    \vspace{3pt}
+}
+
+% Command for displaying projects
+\newcommand{\project}[2]{
+    \textbf{#1} -- \emph{#2} \\
+}
+
+\newcommand{\pro}[3]{
+    \item \href{#2}{\textbf{#1}} -- {#3}
+    % \vspace{1pt}
+}
+
+% Command for displaying skills table
+\newcommand{\skills}[3]{
+    \vspace{-2pt}
+    \ \ \ \ \ \ \ \ \ \ \ 
+    \begin{tabular}{r!{\color{burgundy}\vrule}l}
+          Programming: & #1 \\
+          Web \& Databases: & #2 \\
+          Tools \& Technologies: & #3
+    \end{tabular}
+    \vspace{4pt}
+}
+
+
+% Command for displaying individual awards & activity bullets
+\newcommand{\activity}[2]{
+    \item #1 \hfill{\emph{#2}}      
+}
+
+% Command for the beginning of bullets in work exp and projects
+\newcommand{\bulletsBegin}{
+    \vspace{1pt}
+    \begin{minipage}{17.6cm} 
+    \begin{itemize}[leftmargin=0.6cm]
+    \setlength\itemsep{-0.009em}
+}
+
+% Command for the end of bullets in work exp and projects
+\newcommand{\bulletsEnd}{
+    \end{itemize}\vspace{0pt}
+    \end{minipage}
+}
+
+% Command for the beginning of bullets in work exp and projects
+\newcommand{\bulletsBeginn}{
+    \vspace{1pt}
+    \begin{minipage}{18cm} 
+    \begin{itemize}[leftmargin=0.6cm]
+    % \setlength\itemsep{-0.018em}
+}
+
+% Command for the end of bullets in work exp and projects
+\newcommand{\bulletsEndd}{
+    \end{itemize}\vspace{0pt}
+    \end{minipage}
+}
+
+% Command for personal website
+\newcommand{\mySite}[1]{
+    \href{https://example.com}{\faLink \ #1}
+    \ |
+}
+
+% Command for email
+\newcommand{\myEmail}[1]{
+    \href{mailto:example@email.edu}{\faEnvelope \ #1}
+    \ |
+}
+
+% Command for github profile
+\newcommand{\myGitHub}[1]{
+    \href{https://github.com/example/}{\faGithub \ #1}
+}
+
+% Command for displaying name and Contact info
+\newcommand{\myName}[4]{
+    \begin{center}
+        {\huge{\color{burgundy}\scshape{#1}}} \\
+        \vspace{8pt}
+        \myEmail{#4}
+        \mySite{#2}
+        \myGitHub{#3}
+    \end{center}
+    \vspace{-4pt}
+}
+
+% Title formatting for each section on resume
+\titleformat{\section}{
+	\vspace{-16pt}\color{burgundy}\scshape\raggedright\large
+	}{}{0em}{}[\titlerule\vspace{-1pt}]
+
+%% DOCUMENT 
+
+\begin{document}
+
+    %% HEADING --------------------
+    \myName{First Last}{https://website.com/}{https://github.com/example/}{example@email.com}
+
+    %% EDUCATION --------------------
+    \section{Education}
+        
+    \organization{Example State University}{Sep. 20XX - May. 20XX}
+        {B.S. in Computer Science}{GPA: 4.00/4.00}
+        \bulletsBegin
+            \item Relevant coursework: minima veniam, quis nostrum, exercitationem, ullam, corporis suscipit, laboriosam, nisi ut aliquid, ex ea commodi, consequatur, accusamus et, iusto odio, dignissimos ducimus
+        \bulletsEnd
+        \vspace{-2pt}
+
+    %% WORK EXPERIENCE --------------------
+    % \vspace{5pt}
+    \section{Work Experience}
+
+        \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+        {Position}{San Francisco, CA}
+        \bulletsBegin
+            \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+            \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+            \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+        \bulletsEnd
+
+        \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+        {Position}{San Francisco, CA}
+        \bulletsBegin
+            \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+            \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+            \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+        \bulletsEnd
+
+        \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+        {Position}{San Francisco, CA}
+        \bulletsBegin
+            \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+            \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+        \bulletsEnd
+
+        \organization{Cool Company Inc.}{Mon 20XX - Aug. 20XX}
+        {Position}{San Francisco, CA}
+        \bulletsBegin
+            \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+            \item totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit
+        \bulletsEnd
+
+    %% PROJECTS --------------------
+    \section{Projects}
+
+        % \vspace{1pt}
+    
+        \bulletsBegin
+            \vspace{-3pt}
+        \pro{Cool Project}
+            {https://github.com/example/project}
+            {Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciun}
+        \pro{Cool Project}
+            {https://github.com/example/project}
+            {totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit}
+        \pro{Cool Project}
+            {https://github.com/example/project}
+            {facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis}
+        
+        
+        % \vspace{-1pt}
+        \bulletsEnd
+
+    %% SKILLS --------------------
+    \section{Skills}
+    
+    \skills
+        {quia dolor sit amet, consectetur, adipisci velit}               % Programming languages
+        {quibusdam et aut officiis debitis aut rerum}               % Web & Databases
+        { libero tempore, cum soluta nobis est eligendi optio cumqueX}                             % Tools & Technologies
+
+    %% AWARDS --------------------
+    
+    \section{Awards}
+
+    \bulletsBeginn
+        \activity{Turing Award}{Mar. 20XX}
+        \vspace{-4pt}
+        \activity{Nobel Prize}{May. 20XX}
+    \bulletsEndd
+
+    % \vspace{3pt}
+    % \color{light-grey}
+    % R\'esum\'e \hfill{Updated: July 2019}
+
+\end{document}
+
